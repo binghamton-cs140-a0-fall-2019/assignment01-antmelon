@@ -20,8 +20,8 @@ public class DateAndPlaceOfBirth {
 	 * @param countryBirth the country where the birth took place
 	 */
 	public DateAndPlaceOfBirth(
-			int yearOfBirth, 
-			int monthOfBirth, 
+			int yearOfBirth,
+			int monthOfBirth,
 			int dayOfBirth,
 			String cityOfBirth,
 			String stateOfBirth,
@@ -39,8 +39,8 @@ public class DateAndPlaceOfBirth {
 	 * @param countryBirth the country where the birth took place
 	 */
 	public DateAndPlaceOfBirth(
-			int yearOfBirth, 
-			int monthOfBirth, 
+			int yearOfBirth,
+			int monthOfBirth,
 			int dayOfBirth,
 			String cityOfBirth,
 			String countryBirth) {
@@ -63,7 +63,7 @@ public class DateAndPlaceOfBirth {
 	public String getPlaceOfBirth() {
 		return placeOfBirth;
 	}
-	
+
 	/**
 	 * The method olderThan returns true if the date of birth of
 	 * this DateAndPlaceOfBirth is before the date of birth of
@@ -106,10 +106,19 @@ public class DateAndPlaceOfBirth {
 	 * the same day and month as the date of birth of other and false otherwise
 	 */
 	public boolean hasSameBirthDayAs(DateAndPlaceOfBirth other) {
-  //TODO complete this method
+  		int day1 = dateOfBirth.getDayOfMonth();
+		int day2 = other.dateOfBirth.getDayOfMonth();
+		int month1 = dateOfBirth.getMonthValue();
+		int month2 = other.dateOfBirth.getMonthValue();
+		if(day1 == day2 && month1 == month2){
+			return true;
+		}
+		else{
+			return false;
+		}
   }
 	@Override
 	public String toString() {
 		return "Date and place of birth: " + dateOfBirth + ", " + placeOfBirth;
-	}	
+	}
 }
